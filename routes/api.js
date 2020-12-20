@@ -9,6 +9,7 @@ router.get("/", (req, res) => {
 router.get("/graph_data", (req, res) => {
   var graph_data_response = [];
   graph_data_response = generateData();
+  console.log(graph_data_response);
   res.status(200).send({
     data: graph_data_response,
   });
@@ -27,7 +28,6 @@ function generateData() {
     ).toFixed(2);
     data.push(temp);
   }
-  console.log(data);
   return data;
 }
 
