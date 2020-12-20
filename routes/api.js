@@ -9,7 +9,9 @@ router.get("/", (req, res) => {
 router.get("/graph_data", (req, res) => {
   var graph_data_response = [];
   graph_data_response = generateData();
-  res.send(graph_data_response);
+  res.status(200).send({
+    data: graph_data_response,
+  });
   //   setTimeout(generateData, 3000);
 });
 
